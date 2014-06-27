@@ -1,6 +1,6 @@
 <?php
 $ret = shell_exec('ifconfig | grep 192.');
-$ip_ad = preg_replace('/^.*addr:(192\S*) .*$/', '$1', trim($ret));
+$ip_ad = preg_replace('/^.*addr:(\S+) .*$/', '$1', trim($ret));
 ?>
 <!doctype html>
 <html lang="ja">
