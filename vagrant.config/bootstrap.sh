@@ -17,8 +17,7 @@ yum -y install --enablerepo=remi --enablerepo=remi-php55 php php-opcache php-mbs
 
 
 # apache2
-rm /etc/httpd/conf/httpd.conf
-ln -s /vagrant/vagrant.config/httpd.conf /etc/httpd/conf/httpd.conf
+ln -s /vagrant/vagrant.config/httpd.conf /etc/httpd/conf.d/vagrant.conf
 service httpd start
 chkconfig httpd on
 

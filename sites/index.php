@@ -8,7 +8,6 @@ $ip_ad = preg_replace('/^.*addr:(192\S*) .*$/', '$1', trim($ret));
 	<meta charset="UTF-8">
 	<title>tamvagrant</title>
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
