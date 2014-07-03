@@ -14,12 +14,15 @@ cp -p /usr/share/zoneinfo/Japan /etc/localtime
 
 # php
 yum -y install --enablerepo=remi --enablerepo=remi-php55 php php-opcache php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug
+mv /etc/php.ini /vagrant/vagrant.config/php.ini
+ln -s /vagrant/vagrant.config/php.ini /etc/php.ini
 
 
 # apache2
-ln -s /vagrant/vagrant.config/httpd.conf /etc/httpd/conf.d/vagrant.conf
-service httpd start
 chkconfig httpd on
+ln -s /vagrant/vagrant.config/httpd.conf /etc/httpd/conf.d/vagrant.conf
+mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.org
+service httpd start
 
 
 # mysql
