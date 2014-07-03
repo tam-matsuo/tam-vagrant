@@ -19,22 +19,22 @@ ln -s /vagrant/vagrant.config/php.ini /etc/php.ini
 
 
 # apache2
-chkconfig httpd on
+yum -y install httpd
 ln -s /vagrant/vagrant.config/httpd.conf /etc/httpd/conf.d/vagrant.conf
 mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.org
-service httpd start
+chkconfig httpd on
 
 
 # mysql
-yum -y install mysql-server
+yum -y install mysql-server phpMyAdmin
 chkconfig mysqld on
 /etc/rc.d/init.d/mysqld start
 mysqladmin -f -u root drop test
 mysqladmin -u root password 'mysql'
 
 # phpmyadmin
-yum -y install phpMyAdmin
-
+mv /etc/httpd/conf.d/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf.org
+ln -s /vagrant/vagrant.config/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf
 
 # git
 yum -y install git
@@ -42,3 +42,7 @@ yum -y install git
 
 # ToDo: xdebug
 # ToDo: ssl
+
+
+# services
+service httpd start
