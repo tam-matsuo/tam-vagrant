@@ -1,6 +1,8 @@
 # TamVagrant
 
-Vagrantfile for TAM
+## Vagrantfile for TAM
+
+<https://github.com/tam-matsuo/tam-vagrant>
 
 - linux
     - CentOS 6.5
@@ -13,3 +15,5 @@ Vagrantfile for TAM
     - RootUser: **root**
     - Password: **mysql**
     - phpMyAdmin
+
+more: <https://github.com/tam-matsuo/tam-vagrant/wiki>
