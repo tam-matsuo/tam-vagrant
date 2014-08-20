@@ -19,7 +19,7 @@ chkconfig iptables off
 
 
 # php
-yum -y install --enablerepo=remi --enablerepo=remi-php55 php php-common php-opcache php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug php-gd
+yum -y install --enablerepo=remi --enablerepo=remi-php55 php php-common php-opcache php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit php-pecl-xdebug php-gd php-bcmath
 mv /etc/php.ini /etc/php.ini.org
 cp /vagrant/vagrant.config/php.ini /etc/php.ini
 
