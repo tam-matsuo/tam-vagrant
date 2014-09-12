@@ -32,6 +32,7 @@ foreach (glob('*') as $filename) {
 
 <ul>
 	<li><a href="/phpmyadmin/">phpMyAdmin</a></li>
+	<li><a href="/phpPgAdmin/">phpPgAdmin</a></li>
 	<li><a href="info.php">phpinfo()</a></li>
 </ul>
 

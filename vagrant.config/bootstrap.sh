@@ -46,6 +46,29 @@ cp /vagrant/vagrant.config/phpMyAdmin.conf /etc/httpd/conf.d/phpMyAdmin.conf
 yum -y install git
 
 
+# postgresql
+yum -y install postgresql-server
+service postgresql initdb --encoding=UTF8 --no-locale
+mv /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf.org
+cp /vagrant/vagrant.config/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf
+
+/etc/init.d/postgresql start
+chkconfig postgresql on
+
+psql -c "ALTER USER postgres WITH PASSWORD 'postgres';" -d postgres -U postgres
+
+# phpgadmin インストール
+yum --enablerepo=remi,remi-php55 -y install phpPgAdmin
+mv /etc/httpd/conf.d/phpPgAdmin.conf /etc/httpd/conf.d/phpPgAdmin.conf.org
+cp /vagrant/vagrant.config/phpPgAdmin.conf /etc/httpd/conf.d/phpPgAdmin.conf
+
+# phpgadmin アクセス設定
+mv /etc/phpPgAdmin/config.inc.php /etc/phpPgAdmin/config.inc.php.org
+cp /vagrant/vagrant.config/phpPgAdmin.config.inc.php /etc/phpPgAdmin/config.inc.php
+
+#psql -U postgres -d postgres ALTER USER postgres WITH PASSWORD 'postgres'
+
+
 # ToDo: xdebug
 # ToDo: ssl
 

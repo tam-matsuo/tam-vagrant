@@ -15,5 +15,9 @@
     - RootUser: **root**
     - Password: **mysql**
     - phpMyAdmin
+- PostgreSQL
+    - RootUser: **postgres**
+    - Password: **postgres**
+	- phpPgAdmin
 
 more: <https://github.com/tam-matsuo/tam-vagrant/wiki>
